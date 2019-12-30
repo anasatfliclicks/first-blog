@@ -1,0 +1,11 @@
+<%= render 'layouts/errors', obj:@category%>
+
+<%= form_for @category do |f| %>
+<div class="form-group">
+	<%= f.label :name %>
+	<%= f.text_field :name, class: "form-control"%>
+</div>
+<div>
+	<%= f.submit class: "btn btn-danger"%>
+</div>
+<% end %>

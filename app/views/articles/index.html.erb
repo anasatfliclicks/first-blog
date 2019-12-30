@@ -1,0 +1,14 @@
+<h1 align="center">Listing all articles</h1>
+<div align="center"><%= link_to "Add new article", new_article_path, class: "btn btn-sm btn-primary"%></div>
+<br>
+<table id="articles-datatable" class="display" data-source="<%= articles_path(format: :json) %>">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Categories</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>

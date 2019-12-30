@@ -1,0 +1,9 @@
+<h1 align="center">Edit category</h1>
+
+<%= render 'form' %>
+<br>
+<% if !@category.photo %>
+<%= render 'photos/form', photoable:@category %>
+<% else %>
+<%= render 'photos/photo', photoable:@category %>
+<% end %>

@@ -1,0 +1,9 @@
+
+<%= form_for [photoable, Photo.new] do |f| %>
+	<div class="form-group">
+		<%= f.file_field :image, class: "form-control", required: "required"%>
+	</div>
+	<div>
+		<%= f.submit "Upload Photo", class: "btn btn-danger"%>
+	</div>
+<% end %>

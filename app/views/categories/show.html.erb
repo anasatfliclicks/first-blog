@@ -1,0 +1,12 @@
+<h1 align="center">Category: <%= @category.name %></h1>
+<br>
+<div>
+	<%= render 'comments/comments', commentable:@category %>	
+</div>
+<div>
+<%= render 'comments/form', commentable:@category %>
+</div>
+<h4 align="center">Articles</h4>
+<%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+<%= render 'articles/articles', obj: @category_articles %>
+<%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>

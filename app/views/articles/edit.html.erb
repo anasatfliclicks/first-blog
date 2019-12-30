@@ -1,0 +1,9 @@
+<h1 align="center">Edit article</h1>
+<%= render 'form'%>
+
+<br>
+<% if !@article.photo %>
+<%= render 'photos/form', photoable:@article %>
+<% else %>
+<%= render 'photos/photo', photoable:@article %>
+<% end %>

@@ -1,0 +1,29 @@
+<h1 align="center">All bloggers</h1>
+<%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+<div align="center">
+<% @users.each do |user| %>
+<ul class="user-listing">
+	<div class="row">
+		<div class="col-sm-6 offset-sm-3 card">
+			<li>
+				<%= link_to gravatar_for(user), user_path(user) %>
+			</li>
+			<li class="user-username">
+				<%= link_to user.username, user_path(user)%>
+			</li>
+			<% if logged_in? and current_user.admin? %>
+				<li><%= link_to "Delete this user", user_path(user), method: :delete,
+					data: { confirm: "Are you sure you want to delete the user and all their articles?"}, 
+					class: "btn btn-sm btn-danger" %></li>
+			<% end %>
+			<li>
+				<small>
+					<%= pluralize(user.articles.count,"article") if user.articles %>
+				</small>
+			</li>
+		</div>
+	</div>
+</ul>
+<% end %>
+</div>
+<%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
